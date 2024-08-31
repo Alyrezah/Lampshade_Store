@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BlogManagement.Infra.EfCore\BlogManagement.Infra.EfCore.csproj" />
+    <ProjectReference Include="..\CommentManagement.Infra.EfCore\CommentManagement.Infra.EfCore.csproj" />
+    <ProjectReference Include="..\DiscountManagement.Infra.EfCore\DiscountManagement.Infra.EfCore.csproj" />
+    <ProjectReference Include="..\InventoryManagement.Infra.EfCore\InventoryManagement.Infra.EfCore.csproj" />
+    <ProjectReference Include="..\ShopManagement.Infra.EfCore\ShopManagement.Infra.EfCore.csproj" />
+  </ItemGroup>
+
+</Project>

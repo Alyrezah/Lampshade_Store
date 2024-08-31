@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    @if (ViewData["Title"] == null)
+    {
+        <title>فروشگاه دیجی استور</title>
+    }
+    <title>فروشگاه دیجی استور | @ViewData["Title"]</title>
+
+    @* Meta *@
+    <meta name="keywords" content="@ViewData["keywords"]" />
+    <meta name="description" content="@ViewData["description"]" />
+    @* End Meta *@
+
+    <!-- CSS -->
+    <link href="~/site/assets/css/vendors.css" rel="stylesheet">
+    <link href="~/site/assets/css/style.css" rel="stylesheet">
+    <link href="~/site/assets/css/Custom.css" rel="stylesheet">
+</head>
+
+<body>
+    @* Header Menu Site *@
+    @await Component.InvokeAsync("SiteMenu")
+
+    @RenderBody()
+
+    @*Site Footer*@
+    @await Component.InvokeAsync("Footer")
+
+    <div class="search-overlay" id="search-overlay">
+        <a href="javascript:void(0)" class="close-search-overlay" id="close-search-overlay">
+            <i class="ion-ios-close-empty"></i>
+        </a>
+
+        <div class="search-form">
+            <form method="get" asp-page="SearchResult">
+                <input name="searchValue" id="searchValue" type="search" placeholder="هرچی تو سایت میخوای جستجو کن ...">
+                <button type="submit">
+                    <i class="ion-android-search"></i>
+                </button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- scroll to top  -->
+    <div id="scroll-top">
+        <span>رفتن به بالای صفحه</span><i class="ion-chevron-right"></i><i class="ion-chevron-right"></i>
+    </div>
+    <!-- end of scroll to top -->
+    <!-- JS -->
+    <script src="~/site/assets/js/vendors.js"></script>
+    <script src="~/site/assets/js/active.js"></script>
+
+    @* Cart Scripts *@
+    <script src="~/lib/jquery/dist/jquery.min.js" type="text/javascript"></script>
+    <script src="~/site/assets/js/plugins.js" type="text/javascript"></script>
+    <script src="~/site/assets/js/custom.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function() {
+            window.updateCart();
+        });
+    </script>
+    @* /Cart Scripts *@
+
+    @await RenderSectionAsync("Scripts",required:false)
+</body>
+</html>
